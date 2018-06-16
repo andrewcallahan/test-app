@@ -5,9 +5,9 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     pollyjs: {
-      enabled: EmberApp.env() === 'test',
+      enabled: EmberApp.env() !== 'production',
       server: {
-        apiNamespace: '/api/v1',
+        apiNamespace: 'polly',
         recordingsDir: 'recordings'
       }
     }
