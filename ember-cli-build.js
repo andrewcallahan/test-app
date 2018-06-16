@@ -6,6 +6,11 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     pollyjs: {
       enabled: EmberApp.env() !== 'production',
+      persister: 'rest',
+      persisterOptions: {
+        host: 'http://localhost:3000',
+        apiNamespace: 'api/v1'
+      },
       server: {
         apiNamespace: 'polly',
         recordingsDir: 'recordings'
