@@ -5,12 +5,7 @@ import { setupQunit as setupPolly } from '@pollyjs/core';
 
 module('Acceptance | Projects Test', function(hooks) {
   setupApplicationTest(hooks);
-  setupPolly(hooks, {
-    persisterOptions: {
-      host: 'http://localhost:3000',
-      apiNamespace: '/api/v1'
-    }
-  });
+  setupPolly(hooks);
 
   test('List of Projects', async function(assert) {
     await visit('/projects');
